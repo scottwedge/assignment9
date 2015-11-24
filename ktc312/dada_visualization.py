@@ -18,12 +18,12 @@ class exploratory_tools(object):
     # data set from question 5 for a given year.
     def __init__(self, year):
         self.year = year
-        self.merged_income = merge_by_year(year)
+        self.merged_income = merge_by_year(self.year)
         self.merged_income = self.merged_income.convert_objects(convert_numeric = True)
 
     def histogram(self):
         plt.figure()
-        self.merged_income.hist(column = 'income', by = 'Region', figsize = (10,8), bins =20,
+        self.merged_income.hist(column = 'Income', by = 'Region', figsize = (10,8), bins =20,
                                 sharex = True, sharey =True)
         plt.suptitle('Distribution of income in {}'.format(self.year))
         plt.savefig('Histogram_of_income_in_{}.png'.format(self.year))

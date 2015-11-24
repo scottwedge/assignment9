@@ -4,8 +4,10 @@ import unittest
 
 
 class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
+    def raw_input(self):
+        response = range(1800, 2013, 1)
+        self.assertTrue(1999 in response)
+        self.asertFalse(0000 in response)
 
 
 if __name__ == '__main__':
